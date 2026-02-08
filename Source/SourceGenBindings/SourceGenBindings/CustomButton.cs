@@ -4,8 +4,16 @@ namespace SourceGenBindings;
 
 public partial class CustomButton : Button
 {
+    /*
     [BindableProperty]
+    */
     public partial int? Number { get; set; }
+    public partial int? Number
+    {
+        get => field;
+        set { field = value; OnPropertyChanged(nameof(Number)); }
+    }
+
     //
     // THIS WORKS:
     //
